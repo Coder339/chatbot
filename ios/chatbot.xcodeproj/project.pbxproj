@@ -9,11 +9,35 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* chatbotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* chatbotTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-chatbot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-chatbot.a */; };
+		0DB96A7FB3E04F2BBE317ECB /* BarlowSemiCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E74730FDEB44B7592ACE5F4 /* BarlowSemiCondensed-Light.ttf */; };
+		11CA957168C04ABDBF40BC9B /* BarlowSemiCondensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A6E1DC26C0F4EF6A5505489 /* BarlowSemiCondensed-SemiBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1C370F6286E54F809A392D43 /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0849130A709845558931C58B /* BarlowSemiCondensed-Bold.ttf */; };
+		2AFD8A01D4AC4E08BEB16EC4 /* BarlowSemiCondensed-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A771FB45CD1C4137884EC349 /* BarlowSemiCondensed-ExtraLightItalic.ttf */; };
+		2E5C478DDF1546279DBB5C5D /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0369C2EA2AEF490FBCCA3A44 /* DancingScript-Medium.ttf */; };
+		2EB583B9678B499BB25CB5FF /* BarlowSemiCondensed-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 389A9B2F40334DB481EA6A84 /* BarlowSemiCondensed-SemiBoldItalic.ttf */; };
+		37B1EDAD2AD540B28377991D /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0F20FD6331D475C8BC67F75 /* OFL.txt */; };
+		4429FF93CFF24AA99C219A57 /* BarlowSemiCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 464FA07CBE07493B917FAAB5 /* BarlowSemiCondensed-LightItalic.ttf */; };
+		460A65A0C5A04319883C698E /* BarlowSemiCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A4210CD1B4A4CC6A69B35EA /* BarlowSemiCondensed-ExtraBold.ttf */; };
+		487BE447713F4B2BB4466D10 /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 220971016B654B4AA320F410 /* BarlowSemiCondensed-Black.ttf */; };
+		55E5EBD5B39743B88B5E65AA /* BarlowSemiCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC3D0E5C3B52442CB50F3454 /* BarlowSemiCondensed-Italic.ttf */; };
+		63CE88CD6C9D445DA3AFD652 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1120DA0D8BAD4C23858FDAA8 /* DancingScript-SemiBold.ttf */; };
+		6D586618837C4EABAB704288 /* BarlowSemiCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACA603C1A0894046BEE68FD9 /* BarlowSemiCondensed-Medium.ttf */; };
+		713DEC7827624BD0BBEC1A76 /* BarlowSemiCondensed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE704F86C32240D4B0D26F60 /* BarlowSemiCondensed-ExtraLight.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-chatbot-chatbotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-chatbot-chatbotTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		81ECBEB5DB2F437996F39B1B /* BarlowSemiCondensed-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1E9BE45765A446FB39F5664 /* BarlowSemiCondensed-BlackItalic.ttf */; };
+		9A7B44E200495E668DF669FB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E7D592386EB43A3ED81E9F1E /* PrivacyInfo.xcprivacy */; };
+		AD6B11CED0AB456D922398E2 /* BarlowSemiCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48D0BF5FD1A24449B7C5ABFD /* BarlowSemiCondensed-BoldItalic.ttf */; };
+		AE19485D5E7B42C687D0F55B /* BarlowSemiCondensed-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77A6F45CF6064BAE87A36995 /* BarlowSemiCondensed-MediumItalic.ttf */; };
+		BC8C55CE24E74B7692699C23 /* BarlowSemiCondensed-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C29494D99214D1BAE5D4C76 /* BarlowSemiCondensed-ExtraBoldItalic.ttf */; };
+		CD463BBFC7574A1CAEDB4B6C /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F18437177794AE7AB7C6FDE /* DancingScript-Bold.ttf */; };
+		CF9BAEBE5261433AB829D1FB /* BarlowSemiCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7913A6332C804BDBBFCE0AA5 /* BarlowSemiCondensed-Regular.ttf */; };
+		D4BA5D3431C543B7B852EC8E /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C9273EAED3741AF9DA714AE /* DancingScript-Regular.ttf */; };
+		F906A2F3ED2A4B7D8064DBFF /* BarlowSemiCondensed-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82931461889F4AAE9231FC76 /* BarlowSemiCondensed-ThinItalic.ttf */; };
+		FA0B5F5F6843449CBF57E245 /* BarlowSemiCondensed-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C0658CE5FA64284B47FB7D1 /* BarlowSemiCondensed-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +54,44 @@
 		00E356EE1AD99517003FC87E /* chatbotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatbotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* chatbotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatbotTests.m; sourceTree = "<group>"; };
+		0369C2EA2AEF490FBCCA3A44 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Medium.ttf"; path = "../src/assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; };
+		0849130A709845558931C58B /* BarlowSemiCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Bold.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		1120DA0D8BAD4C23858FDAA8 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-SemiBold.ttf"; path = "../src/assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* chatbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = chatbot/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = chatbot/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = chatbot/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = chatbot/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = chatbot/main.m; sourceTree = "<group>"; };
-	    13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = chatbot/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = chatbot/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-chatbot-chatbotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chatbot-chatbotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6E1DC26C0F4EF6A5505489 /* BarlowSemiCondensed-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-SemiBold.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-SemiBold.ttf"; sourceTree = "<group>"; };
+		1C29494D99214D1BAE5D4C76 /* BarlowSemiCondensed-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		220971016B654B4AA320F410 /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Black.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
+		389A9B2F40334DB481EA6A84 /* BarlowSemiCondensed-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-SemiBoldItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-chatbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatbot.debug.xcconfig"; path = "Target Support Files/Pods-chatbot/Pods-chatbot.debug.xcconfig"; sourceTree = "<group>"; };
+		3C9273EAED3741AF9DA714AE /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Regular.ttf"; path = "../src/assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		3F18437177794AE7AB7C6FDE /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DancingScript-Bold.ttf"; path = "../src/assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		464FA07CBE07493B917FAAB5 /* BarlowSemiCondensed-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-LightItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		48D0BF5FD1A24449B7C5ABFD /* BarlowSemiCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-BoldItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4E74730FDEB44B7592ACE5F4 /* BarlowSemiCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Light.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Light.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-chatbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatbot.release.xcconfig"; path = "Target Support Files/Pods-chatbot/Pods-chatbot.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-chatbot-chatbotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatbot-chatbotTests.debug.xcconfig"; path = "Target Support Files/Pods-chatbot-chatbotTests/Pods-chatbot-chatbotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-chatbot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chatbot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0658CE5FA64284B47FB7D1 /* BarlowSemiCondensed-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Thin.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Thin.ttf"; sourceTree = "<group>"; };
+		77A6F45CF6064BAE87A36995 /* BarlowSemiCondensed-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-MediumItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7913A6332C804BDBBFCE0AA5 /* BarlowSemiCondensed-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Regular.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = chatbot/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82931461889F4AAE9231FC76 /* BarlowSemiCondensed-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-ThinItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-ThinItalic.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-chatbot-chatbotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatbot-chatbotTests.release.xcconfig"; path = "Target Support Files/Pods-chatbot-chatbotTests/Pods-chatbot-chatbotTests.release.xcconfig"; sourceTree = "<group>"; };
+		9A4210CD1B4A4CC6A69B35EA /* BarlowSemiCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-ExtraBold.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A771FB45CD1C4137884EC349 /* BarlowSemiCondensed-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-ExtraLightItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		ACA603C1A0894046BEE68FD9 /* BarlowSemiCondensed-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Medium.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Medium.ttf"; sourceTree = "<group>"; };
+		DC3D0E5C3B52442CB50F3454 /* BarlowSemiCondensed-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-Italic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		DE704F86C32240D4B0D26F60 /* BarlowSemiCondensed-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-ExtraLight.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E0F20FD6331D475C8BC67F75 /* OFL.txt */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = OFL.txt; path = ../src/assets/fonts/OFL.txt; sourceTree = "<group>"; };
+		E1E9BE45765A446FB39F5664 /* BarlowSemiCondensed-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowSemiCondensed-BlackItalic.ttf"; path = "../src/assets/fonts/BarlowSemiCondensed-BlackItalic.ttf"; sourceTree = "<group>"; };
+		E7D592386EB43A3ED81E9F1E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = chatbot/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -94,6 +142,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				E7D592386EB43A3ED81E9F1E /* PrivacyInfo.xcprivacy */,
 			);
 			name = chatbot;
 			sourceTree = "<group>";
@@ -106,6 +155,36 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-chatbot-chatbotTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56394E5D31C34563BB0FC47C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				220971016B654B4AA320F410 /* BarlowSemiCondensed-Black.ttf */,
+				E1E9BE45765A446FB39F5664 /* BarlowSemiCondensed-BlackItalic.ttf */,
+				0849130A709845558931C58B /* BarlowSemiCondensed-Bold.ttf */,
+				48D0BF5FD1A24449B7C5ABFD /* BarlowSemiCondensed-BoldItalic.ttf */,
+				9A4210CD1B4A4CC6A69B35EA /* BarlowSemiCondensed-ExtraBold.ttf */,
+				1C29494D99214D1BAE5D4C76 /* BarlowSemiCondensed-ExtraBoldItalic.ttf */,
+				DE704F86C32240D4B0D26F60 /* BarlowSemiCondensed-ExtraLight.ttf */,
+				A771FB45CD1C4137884EC349 /* BarlowSemiCondensed-ExtraLightItalic.ttf */,
+				DC3D0E5C3B52442CB50F3454 /* BarlowSemiCondensed-Italic.ttf */,
+				4E74730FDEB44B7592ACE5F4 /* BarlowSemiCondensed-Light.ttf */,
+				464FA07CBE07493B917FAAB5 /* BarlowSemiCondensed-LightItalic.ttf */,
+				ACA603C1A0894046BEE68FD9 /* BarlowSemiCondensed-Medium.ttf */,
+				77A6F45CF6064BAE87A36995 /* BarlowSemiCondensed-MediumItalic.ttf */,
+				7913A6332C804BDBBFCE0AA5 /* BarlowSemiCondensed-Regular.ttf */,
+				1A6E1DC26C0F4EF6A5505489 /* BarlowSemiCondensed-SemiBold.ttf */,
+				389A9B2F40334DB481EA6A84 /* BarlowSemiCondensed-SemiBoldItalic.ttf */,
+				6C0658CE5FA64284B47FB7D1 /* BarlowSemiCondensed-Thin.ttf */,
+				82931461889F4AAE9231FC76 /* BarlowSemiCondensed-ThinItalic.ttf */,
+				3F18437177794AE7AB7C6FDE /* DancingScript-Bold.ttf */,
+				0369C2EA2AEF490FBCCA3A44 /* DancingScript-Medium.ttf */,
+				3C9273EAED3741AF9DA714AE /* DancingScript-Regular.ttf */,
+				1120DA0D8BAD4C23858FDAA8 /* DancingScript-SemiBold.ttf */,
+				E0F20FD6331D475C8BC67F75 /* OFL.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -124,6 +203,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				56394E5D31C34563BB0FC47C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -245,6 +325,30 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9A7B44E200495E668DF669FB /* PrivacyInfo.xcprivacy in Resources */,
+				487BE447713F4B2BB4466D10 /* BarlowSemiCondensed-Black.ttf in Resources */,
+				81ECBEB5DB2F437996F39B1B /* BarlowSemiCondensed-BlackItalic.ttf in Resources */,
+				1C370F6286E54F809A392D43 /* BarlowSemiCondensed-Bold.ttf in Resources */,
+				AD6B11CED0AB456D922398E2 /* BarlowSemiCondensed-BoldItalic.ttf in Resources */,
+				460A65A0C5A04319883C698E /* BarlowSemiCondensed-ExtraBold.ttf in Resources */,
+				BC8C55CE24E74B7692699C23 /* BarlowSemiCondensed-ExtraBoldItalic.ttf in Resources */,
+				713DEC7827624BD0BBEC1A76 /* BarlowSemiCondensed-ExtraLight.ttf in Resources */,
+				2AFD8A01D4AC4E08BEB16EC4 /* BarlowSemiCondensed-ExtraLightItalic.ttf in Resources */,
+				55E5EBD5B39743B88B5E65AA /* BarlowSemiCondensed-Italic.ttf in Resources */,
+				0DB96A7FB3E04F2BBE317ECB /* BarlowSemiCondensed-Light.ttf in Resources */,
+				4429FF93CFF24AA99C219A57 /* BarlowSemiCondensed-LightItalic.ttf in Resources */,
+				6D586618837C4EABAB704288 /* BarlowSemiCondensed-Medium.ttf in Resources */,
+				AE19485D5E7B42C687D0F55B /* BarlowSemiCondensed-MediumItalic.ttf in Resources */,
+				CF9BAEBE5261433AB829D1FB /* BarlowSemiCondensed-Regular.ttf in Resources */,
+				11CA957168C04ABDBF40BC9B /* BarlowSemiCondensed-SemiBold.ttf in Resources */,
+				2EB583B9678B499BB25CB5FF /* BarlowSemiCondensed-SemiBoldItalic.ttf in Resources */,
+				FA0B5F5F6843449CBF57E245 /* BarlowSemiCondensed-Thin.ttf in Resources */,
+				F906A2F3ED2A4B7D8064DBFF /* BarlowSemiCondensed-ThinItalic.ttf in Resources */,
+				CD463BBFC7574A1CAEDB4B6C /* DancingScript-Bold.ttf in Resources */,
+				2E5C478DDF1546279DBB5C5D /* DancingScript-Medium.ttf in Resources */,
+				D4BA5D3431C543B7B852EC8E /* DancingScript-Regular.ttf in Resources */,
+				63CE88CD6C9D445DA3AFD652 /* DancingScript-SemiBold.ttf in Resources */,
+				37B1EDAD2AD540B28377991D /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +519,7 @@
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-chatbot-chatbotTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 89FAB3T7M7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -431,7 +536,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chatbot.recipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chatbot.app/chatbot";
 			};
@@ -443,6 +548,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 89FAB3T7M7;
 				INFOPLIST_FILE = chatbotTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,7 +561,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chatbot.recipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chatbot.app/chatbot";
 			};
@@ -467,7 +573,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89FAB3T7M7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = chatbot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,8 +589,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chatbot.recipe;
 				PRODUCT_NAME = chatbot;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -494,7 +604,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89FAB3T7M7;
 				INFOPLIST_FILE = chatbot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -506,8 +619,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chatbot.recipe;
 				PRODUCT_NAME = chatbot;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -517,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -544,6 +659,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -563,6 +679,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -582,7 +700,14 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Wl",
+					"-ld_classic",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -590,6 +715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -617,6 +743,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -629,6 +756,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -647,7 +776,14 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Wl",
+					"-ld_classic",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

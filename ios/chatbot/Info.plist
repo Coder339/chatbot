@@ -26,7 +26,6 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
@@ -34,6 +33,35 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Chatbot require the use of microphone for speech recognition</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Chatbot require the use of the speech recognition for searching items</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BarlowSemiCondensed-Black.ttf</string>
+		<string>BarlowSemiCondensed-BlackItalic.ttf</string>
+		<string>BarlowSemiCondensed-Bold.ttf</string>
+		<string>BarlowSemiCondensed-BoldItalic.ttf</string>
+		<string>BarlowSemiCondensed-ExtraBold.ttf</string>
+		<string>BarlowSemiCondensed-ExtraBoldItalic.ttf</string>
+		<string>BarlowSemiCondensed-ExtraLight.ttf</string>
+		<string>BarlowSemiCondensed-ExtraLightItalic.ttf</string>
+		<string>BarlowSemiCondensed-Italic.ttf</string>
+		<string>BarlowSemiCondensed-Light.ttf</string>
+		<string>BarlowSemiCondensed-LightItalic.ttf</string>
+		<string>BarlowSemiCondensed-Medium.ttf</string>
+		<string>BarlowSemiCondensed-MediumItalic.ttf</string>
+		<string>BarlowSemiCondensed-Regular.ttf</string>
+		<string>BarlowSemiCondensed-SemiBold.ttf</string>
+		<string>BarlowSemiCondensed-SemiBoldItalic.ttf</string>
+		<string>BarlowSemiCondensed-Thin.ttf</string>
+		<string>BarlowSemiCondensed-ThinItalic.ttf</string>
+		<string>DancingScript-Bold.ttf</string>
+		<string>DancingScript-Medium.ttf</string>
+		<string>DancingScript-Regular.ttf</string>
+		<string>DancingScript-SemiBold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
