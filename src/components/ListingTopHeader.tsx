@@ -5,6 +5,7 @@ import { APP_IMAGE } from '../utils/constants'
 import { SCREEN_HEIGHT, SCREEN_WIDTH, globalStyles } from '../styles/globalStyles';
 import { colors } from '../styles/colors';
 import LottieView from 'lottie-react-native';
+import { fonts } from '../styles/fonts';
 
 export default function ListingTopHeader(props: any) {
 
@@ -18,7 +19,8 @@ export default function ListingTopHeader(props: any) {
                 <TextInput
                     value={props.query}
                     placeholder='voice search'
-                    style={{ color: '#000', flex: 1, margin: 0, paddingVertical: 12, marginStart: 4 }}
+                    placeholderTextColor={'grey'}
+                    style={{ ...globalStyles.regularLargeText, color: '#000', flex: 1, margin: 0, paddingVertical: 12, marginStart: 4 }}
                     editable={false}
                 />
                 <View style={styles.seprator} />

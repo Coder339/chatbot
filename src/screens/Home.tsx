@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import RecipeListing from '../components/RecipeListing'
@@ -16,7 +16,7 @@ export default function Home() {
     const [loading, setLoading] = useState(false)
 
     Voice.onSpeechResults = (event: any) => {
-        console.log('VOICE', event);
+        console.log(`VOICE ${Platform.OS}`, event);
 
         setIsListening(false)
         Voice.stop();
@@ -25,11 +25,11 @@ export default function Home() {
     };
 
     Voice.onSpeechStart = (event: any) => {
-        console.log('onSpeechStart', event);;
+        console.log(`onSpeechStart ${Platform.OS}`, event);;
     };
 
     Voice.onSpeechError = (event: any) => {
-        console.log('onSpeechError', event);;
+        console.log(`onSpeechError ${Platform.OS}`, event);;
     };
 
     const fetchRecipes = async (searchQuery: string) => {
@@ -53,10 +53,10 @@ export default function Home() {
         }
     };
 
-    const startListening = () => {
+    const startListening = async () => {
         setQuery('')
         setIsListening(true);
-        Voice.start('en-US');
+        await Voice.start('en-GB');
     };
 
     const stopListening = () => {
