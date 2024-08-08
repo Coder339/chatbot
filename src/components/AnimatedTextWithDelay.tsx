@@ -76,11 +76,11 @@ const styles = StyleSheet.create({
         marginTop: 12
     },
     label: {
-        fontSize: 26,
+        fontSize: 22,
         textAlign: 'center',
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         marginRight: 8,
         color: '#fff',
-        fontFamily: fonts.semiBoldFont
+        fontFamily: fonts.regularFont
     },
 });

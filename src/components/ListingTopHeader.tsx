@@ -11,17 +11,21 @@ export default function ListingTopHeader(props: any) {
 
     return (
         <View style={styles.container}>
-            <Text style={{ ...globalStyles.boldLargeText }}>CHATBOT</Text>
+            <Text style={{ ...globalStyles.boldLargeText }}>KNCG</Text>
             <View style={styles.searchContainer}>
                 {props.isListening &&
                     <LottieView source={require('../assets/animations/soundwave.json')} autoPlay loop style={{ width: 30, height: 40 }} />
                 }
                 <TextInput
                     value={props.query}
-                    placeholder='voice search'
+                    onChangeText={(text) => {
+                        props.setQuery(text)
+                        props.handleSearch(text)
+                    }}
+                    placeholder='search recipe'
                     placeholderTextColor={'grey'}
-                    style={{ ...globalStyles.regularLargeText, color: '#000', flex: 1, margin: 0, paddingVertical: 12, marginStart: 4 }}
-                    editable={false}
+                    style={styles.input}
+                // editable={false}
                 />
                 <View style={styles.seprator} />
                 <Pressable
@@ -42,8 +46,8 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         alignItems: 'center',
-        marginHorizontal: scale(8),
-        marginBottom: scale(4)
+        marginHorizontal: scale(12),
+        marginBottom: scale(4),
     },
     topRightHeaderIcon: {
         width: scale(30),
@@ -53,7 +57,7 @@ const styles = StyleSheet.create({
     searchContainer: {
         flexDirection: 'row',
         flex: 1,
-        marginHorizontal: 14,
+        marginStart: 14,
         borderRadius: 20,
         backgroundColor: colors.lightBlue,
         paddingStart: 8,
@@ -64,5 +68,13 @@ const styles = StyleSheet.create({
         height: scale(26),
         backgroundColor: colors.grey,
         marginHorizontal: 6, alignSelf: 'center'
+    },
+    input: {
+        ...globalStyles.regularLargeText,
+        color: '#000',
+        flex: 1,
+        margin: 0,
+        paddingVertical: 12,
+        marginStart: 4
     }
 })

@@ -14,6 +14,28 @@ export const globalStyles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff'
     },
+    backIcon: {
+        width: scale(30),
+        height: scale(30)
+    },
+    topRightHeaderIcon: {
+        width: scale(36),
+        height: scale(36)
+    },
+    input: {
+        margin: 0,
+        padding: 0,
+        paddingVertical: scale(14),
+        marginTop: scale(10),
+        borderWidth: 1,
+        paddingHorizontal: scale(14),
+        borderRadius: scale(2),
+        textAlign: I18nManager.isRTL ? 'right' : 'left',
+        borderColor: colors.grey2,
+        fontFamily: fonts.regularFont,
+        color: colors.text
+
+    },
     // for text
     regularSmallText: {
         fontFamily: fonts.regularFont,

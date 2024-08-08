@@ -579,6 +579,7 @@
 				DEVELOPMENT_TEAM = 89FAB3T7M7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = chatbot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KingCooking;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,6 +610,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 89FAB3T7M7;
 				INFOPLIST_FILE = chatbot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KingCooking;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

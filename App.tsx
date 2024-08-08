@@ -27,6 +27,9 @@ import {
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native';
 import RootStackScreen from './src/navigations/routes';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from './src/redux/store/store';
 
 type SectionProps = PropsWithChildren<{
 	title: string;
@@ -41,19 +44,22 @@ function App(): React.JSX.Element {
 	};
 
 	return (
-		<View style={{ flex: 1, backgroundColor: '#fff' }}>
-			<StatusBar
-				barStyle={'light-content'}
-				backgroundColor={'transparent'}
-				translucent={true}
-			/>
-			<GestureHandlerRootView style={{ flex: 1 }}>
-				<NavigationContainer
-				>
-					<RootStackScreen />
-				</NavigationContainer>
-			</GestureHandlerRootView>
-		</View>
+		<Provider store={store}>
+			<PersistGate loading={<View><Text>Loading...</Text></View>} persistor={persistor}>
+				<View style={{ flex: 1, backgroundColor: '#fff' }}>
+					<StatusBar
+						barStyle={'light-content'}
+						backgroundColor={'transparent'}
+						translucent={true}
+					/>
+					<GestureHandlerRootView style={{ flex: 1 }}>
+						<NavigationContainer>
+							<RootStackScreen />
+						</NavigationContainer>
+					</GestureHandlerRootView>
+				</View>
+			</PersistGate>
+		</Provider>
 	);
 }
 

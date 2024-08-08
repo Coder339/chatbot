@@ -9,14 +9,21 @@ import { AppStackParamList } from '../../navigations/appRoutes';
 import Animated, { FadeInDown, FadeInLeft } from 'react-native-reanimated';
 import { SCREEN_WIDTH, globalStyles } from '../../styles/globalStyles';
 import { scale } from '../../utils/metrics';
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-
+type NavigationProp = NativeStackNavigationProp<AppStackParamList, 'Home'>;
 interface ItemProps {
     item: any,
     index: number,
+    navigation: NavigationProp,  // pass 'any' if reusable 
+    // removeHandler:(id:string|number)=>void
+    handleLike?: (item: object) => void,
+    handleDislike: (item: object) => void,
+    isHome?: boolean
 }
 
-const RecipeItem: React.FC<ItemProps> = ({ item, index }) => {
+const RecipeItem: React.FC<ItemProps> = ({ item, index, navigation, handleLike, handleDislike, isHome }) => {
 
     const options = {
         enableVibrateFallback: true,
@@ -28,7 +35,10 @@ const RecipeItem: React.FC<ItemProps> = ({ item, index }) => {
             entering={FadeInDown.delay(200 * index)}
         // sharedTransitionTag={index.toString()}
         >
-            <Pressable style={{ margin: 4 }}>
+            <Pressable
+                style={{ margin: 4 }}
+                onPress={() => { navigation.navigate('RecipeDetail', { recipeId: item?.id }) }}
+            >
                 <Image
                     source={{
                         uri: item?.image,
@@ -39,20 +49,52 @@ const RecipeItem: React.FC<ItemProps> = ({ item, index }) => {
                 />
                 <View style={styles.overlay}>
                     <View style={{ margin: 8 }}>
-                        <Animated.Text
-                            entering={FadeInLeft.delay(400)}
-                            style={{
-                                ...globalStyles.boldLargeText,
-                                ...styles.overlayText,
-                                fontSize: 18,
-                            }}>{item?.title}</Animated.Text>
+
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: "space-between" }}>
+                            <Animated.Text
+                                entering={FadeInLeft.delay(400)}
+                                style={{
+                                    ...globalStyles.boldLargeText,
+                                    ...styles.overlayText,
+                                    fontSize: 16,
+                                    flex: 1
+                                }}
+                                numberOfLines={1}
+                            >{item?.title}</Animated.Text>
+                            <Pressable
+                                // style={!isHome ? { ...styles.borderIcon, marginRight: 6, } : null}
+                                onPress={() => {
+                                    ReactNativeHapticFeedback.trigger("impactHeavy", options);
+                                    console.log('logITEMM', item);
+
+                                    if (item.isLiked) {
+                                        handleDislike(item);
+                                    } else {
+                                        if (handleLike) handleLike(item);
+                                    }
+
+                                }}
+                            >
+                                {!isHome ?
+                                    <Image source={APP_IMAGE.deleteWhite} style={{ width: 22, height: 22, marginRight: scale(4) }} />
+                                    :
+                                    <>
+                                        {item?.isLiked ?
+                                            <Image source={APP_IMAGE.heartRed} style={{ width: 20, height: 20 }} />
+                                            :
+                                            <Image source={APP_IMAGE.heartWhite} style={{ width: 20, height: 20 }} />
+                                        }
+                                    </>
+                                }
+                            </Pressable>
+                        </View>
                         <View>
                             <Animated.Text
                                 entering={FadeInLeft.delay(600)}
                                 style={{
                                     ...globalStyles.semiBoldMediumText,
                                     ...styles.overlayText,
-                                    fontSize: 14,
+                                    fontSize: 12,
                                 }}>Tasty</Animated.Text>
                         </View>
                     </View>

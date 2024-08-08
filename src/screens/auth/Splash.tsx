@@ -3,8 +3,9 @@ import React, { useEffect, useRef } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import * as Animatable from 'react-native-animatable';
-import GradientView from '../components/GradientView';
-import AnimatedTextWithDelay from '../components/AnimatedTextWithDelay';
+import GradientView from '../../components/GradientView';
+import AnimatedTextWithDelay from '../../components/AnimatedTextWithDelay';
+import { globalStyles } from '../../styles/globalStyles'
 
 
 interface SplashProps {
@@ -16,8 +17,7 @@ export default function Splash(props: SplashProps) {
     useEffect(() => {
         setTimeout(async () => {
 
-            props.navigation.replace('App');
-            StatusBar.setBarStyle('dark-content')
+            props.navigation.replace('Auth');
 
         }, 3000);
 
@@ -27,7 +27,7 @@ export default function Splash(props: SplashProps) {
     return (
         <View style={{ flex: 1 }}>
             <GradientView style={styles.container}>
-                <Text style={{ color: '#fff', fontSize: 26 }}>C H A T B O T</Text>
+                <Text style={{ ...globalStyles.boldLargeText, color: '#fff', fontSize: 28 }}>K I N G  C O O K I N G</Text>
                 {<AnimatedTextWithDelay width={400} />}
             </GradientView>
         </View>

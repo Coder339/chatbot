@@ -1,19 +1,43 @@
 import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import RecipeListing from '../components/RecipeListing'
-import ListingTopHeader from '../components/ListingTopHeader'
+import RecipeListing from '../../components/RecipeListing'
+import ListingTopHeader from '../../components/ListingTopHeader'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Voice from '@react-native-voice/voice';
-import { KEYCHAIN } from '../utils/keychain'
-import { API_BASE_URL } from '../utils/urls'
+import { KEYCHAIN } from '../../utils/keychain'
+import { API_BASE_URL } from '../../utils/urls'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { AppStackParamList } from '../../navigations/appRoutes'
+import { RouteProp } from '@react-navigation/native'
+import _ from 'lodash';
+import { dislikeRecipe, getRecipes, likeRecipe } from '../../redux/slices/recipeSlice'
+import { useAppDispatch, useAppSelector } from '../../redux/store/store'
 
-export default function Home() {
+
+type HomeNavigationProp = NativeStackNavigationProp<AppStackParamList, 'Home'>;
+type HomeScreenRouteProp = RouteProp<AppStackParamList, 'Home'>;
+
+interface ItemProps {
+    item: any,
+    index: number
+}
+
+interface HomeScreenProps {
+    navigation: HomeNavigationProp;
+    route: HomeScreenRouteProp;
+    // Define your component props here
+}
+
+export default function Home({ navigation, route }: HomeScreenProps) {
     const insets = useSafeAreaInsets()
     const [query, setQuery] = useState('');
     const [recipes, setRecipes] = useState([]);
     const [isListening, setIsListening] = useState(false);
     const [loading, setLoading] = useState(false)
+    const recipeData = useAppSelector(state => state.recipes.recipes)
+
+    const dispatch = useAppDispatch()
 
     Voice.onSpeechResults = (event: any) => {
         console.log(`VOICE ${Platform.OS}`, event);
@@ -21,7 +45,8 @@ export default function Home() {
         setIsListening(false)
         Voice.stop();
         setQuery(event.value[0]);
-        fetchRecipes(event.value[0]);
+        // fetchRecipes(event.value[0]);
+        dispatch(getRecipes(event.value[0]))
     };
 
     Voice.onSpeechStart = (event: any) => {
@@ -42,6 +67,8 @@ export default function Home() {
                 }
             })
             const data = await response.json();
+            // console.log('DATXXX', data);
+
 
             setRecipes(data.results);
             setLoading(false)
@@ -64,6 +91,27 @@ export default function Home() {
         Voice.stop();
     };
 
+    const handleLike = (recipe: any) => {
+        console.log('CHECK-recipe-LIKE', recipe);
+
+        dispatch(likeRecipe(recipe));
+    };
+
+    const handleDislike = (recipe: any) => {
+        console.log('CHECK-recipe-DISLIKE', recipe);
+        dispatch(dislikeRecipe(recipe));
+    };
+
+    const SearchRecipes = (searchTerm: string) => {
+        // console.log('searchTerm', searchTerm);
+        // fetchRecipes(searchTerm)
+        dispatch(getRecipes(searchTerm))
+
+        // Perform search here
+    }
+
+    const handleSearch = useCallback(_.debounce(SearchRecipes, 500), []);
+
 
     useEffect(() => {
         // setLoading(true)
@@ -84,14 +132,20 @@ export default function Home() {
         <SafeAreaView style={{ flex: 1, marginTop: insets.top }}>
             <ListingTopHeader
                 query={query}
+                setQuery={setQuery}
+                handleSearch={handleSearch}
                 isListening={isListening}
                 setIsListening={setIsListening}
                 startListening={startListening}
                 stopListening={stopListening}
             />
             <RecipeListing
-                data={recipes}
+                data={recipeData}
                 loading={loading}
+                navigation={navigation}
+                handleLike={handleLike}
+                handleDislike={handleDislike}
+                isHome={true}
             />
         </SafeAreaView>
     )
