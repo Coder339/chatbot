@@ -4,9 +4,9 @@ import { globalStyles } from '../styles/globalStyles'
 import { scale } from '../utils/metrics'
 
 export default function AppHeader(props: any) {
-    const { leftPress, titleBox, rightIcon, leftIcon, rightPress, titleStyle } = props
+    const { leftPress, titleBox, rightIcon, leftIcon, rightPress, titleStyle, style } = props
     return (
-        <View style={styles.container}>
+        <View style={{ ...styles.container, ...style }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                 {leftIcon ?
                     <Pressable hitSlop={30} onPress={leftPress}>

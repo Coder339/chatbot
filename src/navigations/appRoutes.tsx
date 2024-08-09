@@ -15,6 +15,7 @@ import { scale } from '../utils/metrics';
 import Track from '../screens/app/Track';
 import Favourites from '../screens/app/Favourites';
 import RecipeDetail from '../screens/app/RecipeDetail';
+import Instructions from '../screens/app/Instructions';
 
 
 export type AppStackParamList = {
@@ -23,7 +24,8 @@ export type AppStackParamList = {
     Account: { isOtherUser: boolean } | undefined;
     Track: undefined;
     Favourites: undefined;
-    RecipeDetail: { recipeId: string } | undefined
+    RecipeDetail: { recipeId: string } | undefined;
+    Instructions: undefined
 };
 
 type TabStackParamList = {
@@ -167,6 +169,12 @@ function AppStack() {
                 name="RecipeDetail"
                 component={RecipeDetail}
                 options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Instructions"
+                component={Instructions}
+                options={{ headerShown: false, animation: 'fade_from_bottom' }}
+
             />
         </Stack.Navigator>
     );

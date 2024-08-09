@@ -15,6 +15,7 @@ export const APP_IMAGE = {
     arrowBack: require('../assets/images/icons/back.png'),
     deleteWhite: require('../assets/images/icons/deleteWhite.png'),
     track: require('../assets/images/icons/track.png'),
+    nutrition: require('../assets/images/icons/pyramid.png'),
 
     //TABS
     homeActive: require('../assets/images/tabs/homeActive.png'),

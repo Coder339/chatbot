@@ -1,5 +1,5 @@
-import { Alert, Image, Platform, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
+import { Alert, Image, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { APP_IMAGE, APP_TEXT } from '../../utils/constants'
 import { SCREEN_HEIGHT } from '../../styles/globalStyles'
 import { scale } from '../../utils/metrics'
@@ -19,6 +19,7 @@ import { KEYCHAIN } from '../../utils/keychain'
 import { colors } from '../../styles/colors'
 import RenderHtml from 'react-native-render-html';
 import { fonts } from '../../styles/fonts'
+import { BottomSheetBackdrop, BottomSheetFlatList, BottomSheetModal } from '@gorhom/bottom-sheet'
 
 type RecipeDetailNavigationProp = NativeStackNavigationProp<AppStackParamList, 'RecipeDetail'>;
 type RecipeDetailScreenRouteProp = RouteProp<AppStackParamList, 'RecipeDetail'>;
@@ -70,6 +71,27 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
     //     </p>`
     // };
 
+    // ref
+    const bottomSheetModalRef = useRef<BottomSheetModal | null>(null);
+
+    // variables
+    const snapPoints = useMemo(() => ['50%', '85%'], []);
+
+    // callbacks
+    const handlePresentModalPress = useCallback(() => {
+        bottomSheetModalRef.current?.present();
+        // setSheetEnabled(true)
+    }, []);
+
+    const handleSheetChanges = useCallback((index: number) => {
+        // console.log('handleSheetChanges', index);
+        if (index === -1) {
+            console.log('close modal');
+            bottomSheetModalRef.current?.dismiss()
+            // setSheetEnabled(false)
+        }
+    }, []);
+
     const fetchRecipeDetail = async () => {
         try {
             const response = await fetch(`${API_BASE_URL}${recipeId}/information?apiKey=${KEYCHAIN.SPOONACULAR_API_KEY}&includeNutrition=true`, {
@@ -95,6 +117,33 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
         fetchRecipeDetail()
     }, [])
 
+
+    const ingredientItem = ({ item, index }: any) => {
+        return (
+            <View style={{ backgroundColor: colors.primary, borderWidth: 1, borderRadius: 4, borderColor: '#fff', alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: scale(14), paddingVertical: 20 }}>
+                <Text style={{ ...globalStyles.regularLargeText, color: '#fff' }}>ingredientItem</Text>
+                <Text style={{ ...globalStyles.regularLargeText, color: '#fff' }}>{item}</Text>
+            </View>
+        )
+    }
+
+    const _ingredientItemSeprator = () => {
+        return (
+            <View style={{ marginVertical: 8 }} />
+        )
+    }
+
+    const renderBackdrop = useCallback(
+        (props: any) => (
+            <BottomSheetBackdrop
+                {...props}
+                disappearsOnIndex={-1}
+                appearsOnIndex={0}
+                pressBehavior={'close'}
+            />
+        ),
+        []
+    );
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
             <Animated.View
@@ -157,26 +206,40 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                     <Animated.View
                         entering={FadeInRight.delay(400)}
                         style={{
-                            backgroundColor: "#000",
-                            borderRadius: 12,
-                            paddingVertical: 8,
-                            paddingHorizontal: 6,
-                            alignSelf: 'baseline',
+                            // backgroundColor: "#fff",
                             position: "absolute",
                             bottom: 10,
-                            right: 10,
-                            alignItems: 'center',
-                            marginHorizontal: 12
-
-                            // justifyContent:"center"
+                            alignItems: 'center', flexDirection: 'row',
+                            marginHorizontal: scale(16),
+                            // right: 10,
+                            justifyContent: "space-between", left: 0, right: 0
                         }}>
-                        <Text style={{ ...globalStyles.boldLargeText, color: '#fff', }}>{activeIndex + 1}</Text>
-                        <View style={{ width: 12, borderTopWidth: 1, borderColor: '#fff' }} />
-                        <Text style={{ ...globalStyles.boldLargeText, color: '#fff' }}>8</Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+                            <Pressable style={styles.infoContainer} onPress={() => bottomSheetModalRef.current?.present()}>
+                                <Text style={{ ...globalStyles.boldSmallText, color: '#fff' }}>Ingredients</Text>
+                                <Text style={{ ...globalStyles.boldLargeText, color: '#fff', fontSize: 26 }}>14</Text>
+                            </Pressable>
+                            <Pressable
+                                style={{ ...styles.infoContainer, marginStart: scale(8) }}
+                                onPress={() => navigation.navigate('Instructions')}
+                            >
+                                <Text style={{ ...globalStyles.boldSmallText, color: '#fff' }}>Steps</Text>
+                                <Text style={{ ...globalStyles.boldLargeText, color: '#fff', fontSize: 26 }}>2</Text>
+                            </Pressable>
+                        </View>
+                        <Pressable
+                            style={{ ...styles.infoContainer }}
+                        >
+                            <Image
+                                source={APP_IMAGE.nutrition}
+                                style={{ width: scale(30), height: scale(48) }}
+                                resizeMode='contain'
+                            />
+                        </Pressable>
                     </Animated.View>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    <View style={{ margin: scale(28) }}>
+                    <View style={{ margin: scale(16) }}>
                         <Animatable.Text animation={'zoomInDown'} style={{ ...globalStyles.boldLargeText, color: '#000', fontSize: 22 }}>{recipeDetail?.title}</Animatable.Text>
                         <Animatable.Text animation={'zoomInDown'} style={{ ...globalStyles.semiBoldLargeText, color: '#000', marginTop: 4, marginBottom: 16 }}>ReadyIn : {recipeDetail?.readyInMinutes} Minutes</Animatable.Text>
                         {/* <Animatable.Text animation={'fadeInRight'} style={{ ...globalStyles.regularLargeText, color: '#000', marginTop: 16, fontSize: 18 }}>{recipeDetail?.summary}</Animatable.Text> */}
@@ -197,9 +260,33 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                 <AppButton
                     text='Start Cooking'
                     onPress={() => { }}
-                    style={{ borderwidth: 2, margin: 20, marginTop: 0 }}
+                    style={{ borderwidth: 2, marginBottom: 20, marginTop: 0, marginHorizontal: 16 }}
                 />
             </Animated.View>
+            <BottomSheetModal
+                ref={bottomSheetModalRef}
+                index={0}
+                snapPoints={snapPoints}
+                onChange={handleSheetChanges}
+                backdropComponent={renderBackdrop}
+            >
+                <KeyboardAvoidingView
+                    style={styles.sheetContainer}
+                    behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+                // style={{...styles.container, ...customContainerStyle}}
+                >
+                    <BottomSheetFlatList
+                        showsVerticalScrollIndicator={false}
+                        data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
+                        keyExtractor={(item, index) => index.toLocaleString()}
+                        renderItem={ingredientItem}
+                        ItemSeparatorComponent={_ingredientItemSeprator}
+                        style={{ marginHorizontal: 16 }}
+                    // contentContainerStyle={styles.contentContainer}
+                    />
+                </KeyboardAvoidingView>
+            </BottomSheetModal>
+
         </View>
     )
 }
@@ -234,5 +321,18 @@ const styles = StyleSheet.create({
     backIcon: {
         width: scale(30),
         height: scale(30)
-    }
+    },
+    infoContainer: {
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#fff',
+        paddingHorizontal: 14,
+        paddingVertical: 4
+    },
+    sheetContainer: {
+        flex: 1,
+        // alignItems: 'center',
+        // backgroundColor:colors.tertiary
+    },
 })

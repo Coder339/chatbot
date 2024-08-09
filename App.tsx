@@ -30,6 +30,10 @@ import RootStackScreen from './src/navigations/routes';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './src/redux/store/store';
+import {
+	BottomSheetModal,
+	BottomSheetModalProvider,
+} from '@gorhom/bottom-sheet';
 
 type SectionProps = PropsWithChildren<{
 	title: string;
@@ -54,7 +58,9 @@ function App(): React.JSX.Element {
 					/>
 					<GestureHandlerRootView style={{ flex: 1 }}>
 						<NavigationContainer>
-							<RootStackScreen />
+							<BottomSheetModalProvider>
+								<RootStackScreen />
+							</BottomSheetModalProvider>
 						</NavigationContainer>
 					</GestureHandlerRootView>
 				</View>
