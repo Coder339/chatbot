@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Yarn Install
         run: |
-             cd ./packages/app-mobile/
+             cd .chatbot/
              npm i -g corepack
              yarn install             
       - name: Build application
@@ -42,5 +42,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app
-          path: ./packages/app-mobile/android/app/build/outputs/apk/debug/app-debug.apk
+          path: .chatbot/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 3
