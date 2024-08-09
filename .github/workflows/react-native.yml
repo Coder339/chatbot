@@ -31,7 +31,6 @@ jobs:
 
       - name: Run Yarn Install
         run: |
-             cd .chatbot/
              npm i -g corepack
              yarn install             
       - name: Build application
