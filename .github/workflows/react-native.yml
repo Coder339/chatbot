@@ -43,5 +43,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app
-          path: ./android/app/build/outputs/apk/debug/app-armeabi-v7a-debug.apk
+          path: ./android/app/build/outputs/apk/release/app-armeabi-v7a-release.apk
           retention-days: 3
