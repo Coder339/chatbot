@@ -121,7 +121,7 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
     const ingredientItem = ({ item, index }: any) => {
         return (
             <View style={{ backgroundColor: colors.primary, borderWidth: 1, borderRadius: 4, borderColor: '#fff', alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: scale(14), paddingVertical: 20 }}>
-                <Text style={{ ...globalStyles.regularLargeText, color: '#fff' }}>ingredientItem</Text>
+                <Text style={{ ...globalStyles.regularLargeText, color: '#fff' }}>Ingredient</Text>
                 <Text style={{ ...globalStyles.regularLargeText, color: '#fff' }}>{item}</Text>
             </View>
         )
