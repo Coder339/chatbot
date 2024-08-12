@@ -43,7 +43,7 @@ export default function RecipeListing({ data, navigation, contentContainerStyle,
                 keyExtractor={(item, index) => index.toString()}
                 numColumns={2}
                 columnWrapperStyle={{ justifyContent: 'space-between' }}
-                style={{ marginHorizontal: loading ? 8 : 4, flex: 1 }}
+                style={{ marginHorizontal: loading ? 8 : 4 }}
                 contentContainerStyle={contentContainerStyle}
                 showsVerticalScrollIndicator={false}
                 ListEmptyComponent={_listEmptyComponent}

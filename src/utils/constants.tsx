@@ -16,6 +16,7 @@ export const APP_IMAGE = {
     deleteWhite: require('../assets/images/icons/deleteWhite.png'),
     track: require('../assets/images/icons/track.png'),
     nutrition: require('../assets/images/icons/pyramid.png'),
+    sendMessage: require('../assets/images/icons/sendMessage.png'),
 
     //TABS
     homeActive: require('../assets/images/tabs/homeActive.png'),
@@ -24,6 +25,8 @@ export const APP_IMAGE = {
     profileInActive: require('../assets/images/tabs/profile.png'),
     trackActive: require('../assets/images/tabs/trackActive.png'),
     trackInActive: require('../assets/images/tabs/trackInactive.png'),
+    chatActive: require('../assets/images/tabs/chatActive.png'),
+    chatInActive: require('../assets/images/tabs/chat.png'),
 }
 
 export const APP_TEXT = {

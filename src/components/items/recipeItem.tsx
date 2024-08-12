@@ -6,11 +6,12 @@ import { APP_IMAGE } from '../../utils/constants';
 // import { createStackNavigator, StackScreenProps, StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { AppStackParamList } from '../../navigations/appRoutes';
-import Animated, { FadeInDown, FadeInLeft } from 'react-native-reanimated';
-import { SCREEN_WIDTH, globalStyles } from '../../styles/globalStyles';
+import Animated, { BounceIn, BounceInDown, BounceInUp, FadeInDown, FadeInLeft } from 'react-native-reanimated';
+import { SCREEN_HEIGHT, SCREEN_WIDTH, globalStyles } from '../../styles/globalStyles';
 import { scale } from '../../utils/metrics';
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import LottieView from 'lottie-react-native';
 
 type NavigationProp = NativeStackNavigationProp<AppStackParamList, 'Home'>;
 interface ItemProps {
@@ -30,9 +31,12 @@ const RecipeItem: React.FC<ItemProps> = ({ item, index, navigation, handleLike, 
         ignoreAndroidSystemSettings: false,
     };
 
+    const animRef = useRef<null>(null)
+
     return (
         <Animated.View
             entering={FadeInDown.delay(200 * index)}
+            style={{ position: 'relative' }}
         // sharedTransitionTag={index.toString()}
         >
             <Pressable
@@ -70,7 +74,11 @@ const RecipeItem: React.FC<ItemProps> = ({ item, index, navigation, handleLike, 
                                     if (item.isLiked) {
                                         handleDislike(item);
                                     } else {
-                                        if (handleLike) handleLike(item);
+                                        if (handleLike) {
+                                            handleLike(item)
+                                            // animRef?.current?.play()
+                                            // animRef?.current?.pause()
+                                        }
                                     }
 
                                 }}
@@ -80,7 +88,7 @@ const RecipeItem: React.FC<ItemProps> = ({ item, index, navigation, handleLike, 
                                     :
                                     <>
                                         {item?.isLiked ?
-                                            <Image source={APP_IMAGE.heartRed} style={{ width: 20, height: 20 }} />
+                                            <Animated.Image entering={BounceIn} source={APP_IMAGE.heartRed} style={{ width: 20, height: 20 }} />
                                             :
                                             <Image source={APP_IMAGE.heartWhite} style={{ width: 20, height: 20 }} />
                                         }
@@ -101,6 +109,15 @@ const RecipeItem: React.FC<ItemProps> = ({ item, index, navigation, handleLike, 
                 </View>
 
             </Pressable>
+            {/* <Pressable style={{ position: 'absolute', top: ((SCREEN_WIDTH / 2 - scale(70))) / 2, left: ((SCREEN_WIDTH / 2 - scale(140))) / 2 }}>
+                <LottieView
+                    ref={animRef}
+                    source={require('../../assets/animations/likeDribble.json')}
+                    // autoPlay
+                    loop
+                    style={{ width: scale(140), height: scale(140) }}
+                />
+            </Pressable> */}
         </Animated.View>
     )
 }

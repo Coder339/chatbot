@@ -42,7 +42,7 @@ export const getRecipes = createAsyncThunk(
                 }
             })
             let data = await response.json();
-            // console.log('data RECIPES', data, response.status);
+            console.log('data RECIPES', data, response.status);
 
             if (response.status === 200) {
                 return data?.results;

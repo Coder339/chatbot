@@ -1,5 +1,5 @@
-import { Image, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import { Image, PanResponder, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
+import React, { useRef, useState } from 'react'
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AppStackParamList } from '../../navigations/appRoutes';
@@ -10,6 +10,7 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH, globalStyles } from '../../styles/globalSt
 import { scale } from '../../utils/metrics';
 import Animated, { FadeInLeft } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 
 type InstructionslNavigationProp = NativeStackNavigationProp<AppStackParamList, 'Instructions'>;
 type InstructionsScreenRouteProp = RouteProp<AppStackParamList, 'Instructions'>;
@@ -32,9 +33,37 @@ export default function Instructions({ navigation, route }: InstructionsScreenPr
     const [steps, setSteps] = useState([1, 2, 3, 4, 5])
     const insets = useSafeAreaInsets()
 
+    const options = {
+        enableVibrateFallback: true,
+        ignoreAndroidSystemSettings: false,
+    };
+
+
+    const panResponder = useRef(
+        PanResponder.create({
+            onStartShouldSetPanResponder: () => true,
+            onPanResponderRelease: (evt, gestureState) => {
+                if (gestureState.x0 < SCREEN_WIDTH / 2) {
+                    // Tap on the left side
+                    setStep((prevCount) => Math.max(1, prevCount - 1));
+                } else {
+                    // Tap on the right side
+                    setStep((prevCount) => Math.min(steps.length, prevCount + 1));
+                }
+                ReactNativeHapticFeedback.trigger("impactHeavy", options);
+
+            },
+        })
+    ).current;
+
+    console.log('step', step);
+
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: colors.primary, }}>
+        <SafeAreaView
+            style={{ flex: 1, backgroundColor: colors.primary, }}
+            {...panResponder.panHandlers}
+        >
             <AppHeader
                 leftIcon={<Pressable onPress={() => navigation.goBack()}>
                     <Image
@@ -55,14 +84,14 @@ export default function Instructions({ navigation, route }: InstructionsScreenPr
                     <Animated.Text
                         entering={FadeInLeft.delay(400).duration(1000)}
                         style={{ ...globalStyles.semiBoldLargeText, color: '#fff', fontSize: 20, letterSpacing: 6 }}>Step
-                        <Text style={{ ...globalStyles.boldLargeText, color: '#fff', fontSize: 34 }}>1</Text>
+                        <Text style={{ ...globalStyles.boldLargeText, color: '#fff', fontSize: 34 }}>{step}</Text>
                     </Animated.Text>
                     <View style={{ flexDirection: "row", }}>
                         {steps.map((item, index) =>
                             <View style={{
                                 ...styles.stepBar,
                                 width: (SCREEN_WIDTH - scale(200)) / steps.length,
-                                backgroundColor: index === 0 ? '#fff' : "rgba(255,255,255,0.4)"
+                                backgroundColor: index + 1 === step ? '#fff' : "rgba(255,255,255,0.3)"
                             }} />
                         )}
                     </View>

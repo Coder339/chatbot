@@ -18,6 +18,10 @@ export const globalStyles = StyleSheet.create({
         width: scale(30),
         height: scale(30)
     },
+    mediumIcon: {
+        width: scale(24),
+        height: scale(24),
+    },
     topRightHeaderIcon: {
         width: scale(36),
         height: scale(36)

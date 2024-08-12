@@ -20,6 +20,7 @@ import { colors } from '../../styles/colors'
 import RenderHtml from 'react-native-render-html';
 import { fonts } from '../../styles/fonts'
 import { BottomSheetBackdrop, BottomSheetFlatList, BottomSheetModal } from '@gorhom/bottom-sheet'
+import NutritionModal from '../../components/modals/NutritionModal'
 
 type RecipeDetailNavigationProp = NativeStackNavigationProp<AppStackParamList, 'RecipeDetail'>;
 type RecipeDetailScreenRouteProp = RouteProp<AppStackParamList, 'RecipeDetail'>;
@@ -62,6 +63,7 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
     const insets = useSafeAreaInsets()
     const [loading, setLoading] = useState(false)
     const [recipeDetail, setRecipeDetail] = useState<any>(null)
+    const [nutritionModal, setNutritionModal] = useState<boolean>(false)
     // const [first, setfirst] = useState(second)
 
     // const source = {
@@ -204,7 +206,7 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                         />
                     </Animated.View>
                     <Animated.View
-                        entering={FadeInRight.delay(400)}
+                        entering={FadeInRight.delay(400).duration(1000)}
                         style={{
                             // backgroundColor: "#fff",
                             position: "absolute",
@@ -229,6 +231,7 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                         </View>
                         <Pressable
                             style={{ ...styles.infoContainer }}
+                            onPress={() => setNutritionModal(true)}
                         >
                             <Image
                                 source={APP_IMAGE.nutrition}
@@ -240,8 +243,8 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={{ margin: scale(16) }}>
-                        <Animatable.Text animation={'zoomInDown'} style={{ ...globalStyles.boldLargeText, color: '#000', fontSize: 22 }}>{recipeDetail?.title}</Animatable.Text>
-                        <Animatable.Text animation={'zoomInDown'} style={{ ...globalStyles.semiBoldLargeText, color: '#000', marginTop: 4, marginBottom: 16 }}>ReadyIn : {recipeDetail?.readyInMinutes} Minutes</Animatable.Text>
+                        <Animatable.Text duration={2000} animation={'zoomIn'} style={{ ...globalStyles.boldLargeText, color: '#000', fontSize: 22 }}>{recipeDetail?.title}</Animatable.Text>
+                        <Animatable.Text duration={2000} animation={'zoomIn'} style={{ ...globalStyles.semiBoldLargeText, color: '#000', marginTop: 4, marginBottom: 16 }}>ReadyIn : {recipeDetail?.readyInMinutes} Minutes</Animatable.Text>
                         {/* <Animatable.Text animation={'fadeInRight'} style={{ ...globalStyles.regularLargeText, color: '#000', marginTop: 16, fontSize: 18 }}>{recipeDetail?.summary}</Animatable.Text> */}
                         <RenderHtml
                             contentWidth={width}
@@ -254,7 +257,7 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                 </ScrollView>
             </View>
             <Animated.View
-                entering={FadeInDown.delay(500)}
+                entering={FadeInDown.delay(500).duration(1000)}
             // sharedTransitionTag={index.toString()}
             >
                 <AppButton
@@ -286,7 +289,11 @@ export default function RecipeDetail({ navigation, route }: ProductDetailScreenP
                     />
                 </KeyboardAvoidingView>
             </BottomSheetModal>
-
+            <NutritionModal
+                visible={nutritionModal}
+                setVisible={setNutritionModal}
+                onPress={() => Alert.alert('hhh')}
+            />
         </View>
     )
 }

@@ -6,8 +6,13 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH, globalStyles } from '../styles/globalStyle
 import { colors } from '../styles/colors';
 import LottieView from 'lottie-react-native';
 import { fonts } from '../styles/fonts';
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 
 export default function ListingTopHeader(props: any) {
+    const options = {
+        enableVibrateFallback: true,
+        ignoreAndroidSystemSettings: false,
+    };
 
     return (
         <View style={styles.container}>
@@ -30,7 +35,12 @@ export default function ListingTopHeader(props: any) {
                 <View style={styles.seprator} />
                 <Pressable
                     hitSlop={10}
-                    onPress={() => props.isListening ? props.stopListening() : props.startListening()}>
+                    onPress={() => {
+                        ReactNativeHapticFeedback.trigger("impactHeavy", options)
+                        props.isListening ?
+                            (props.stopListening()) :
+                            props.startListening()
+                    }}>
                     <Image
                         source={props.isListening ? APP_IMAGE.stopListen : APP_IMAGE.mic}
                         style={styles.topRightHeaderIcon}

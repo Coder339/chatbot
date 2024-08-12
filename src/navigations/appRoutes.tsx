@@ -16,6 +16,7 @@ import Track from '../screens/app/Track';
 import Favourites from '../screens/app/Favourites';
 import RecipeDetail from '../screens/app/RecipeDetail';
 import Instructions from '../screens/app/Instructions';
+import Gptbot from '../screens/app/Gptbot';
 
 
 export type AppStackParamList = {
@@ -28,10 +29,11 @@ export type AppStackParamList = {
     Instructions: undefined
 };
 
-type TabStackParamList = {
+export type TabStackParamList = {
     HomeStack: undefined,
     AccountStack: undefined,
-    TrackStack: undefined
+    TrackStack: undefined,
+    Gptbot: undefined
 
 };
 
@@ -92,8 +94,8 @@ function TabStack() {
                 initialRouteName="HomeStack"
                 screenOptions={{
                     tabBarStyle: {
-                        paddingTop: 8,
-                        position: "absolute",
+                        // paddingTop: 8,
+                        // position: "absolute",
                     },
                     tabBarActiveTintColor: '#000',
                     tabBarInactiveTintColor: '#fff',
@@ -132,6 +134,22 @@ function TabStack() {
                                 />
                             </View>
                         ),
+                    }}
+                />
+                <Tab.Screen
+                    name={'Gptbot'}
+                    component={Gptbot}
+                    options={{
+                        tabBarIcon: ({ focused, color, size }) => (
+                            <View>
+                                <Image
+                                    style={{ ...styles.icon, width: scale(30), height: scale(30) }}
+                                    source={focused ? APP_IMAGE.chatActive : APP_IMAGE.chatInActive}
+                                    resizeMode='contain'
+                                />
+                            </View>
+                        ),
+                        // tabBarLabel:i18n.t('tabs.more')
                     }}
                 />
                 <Tab.Screen

@@ -1,9 +1,10 @@
-import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Platform, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState, useEffect, useCallback } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import RecipeListing from '../../components/RecipeListing'
 import ListingTopHeader from '../../components/ListingTopHeader'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { SCREEN_WIDTH, globalStyles } from '../../styles/globalStyles';
 import Voice from '@react-native-voice/voice';
 import { KEYCHAIN } from '../../utils/keychain'
 import { API_BASE_URL } from '../../utils/urls'
@@ -13,6 +14,9 @@ import { RouteProp } from '@react-navigation/native'
 import _ from 'lodash';
 import { dislikeRecipe, getRecipes, likeRecipe } from '../../redux/slices/recipeSlice'
 import { useAppDispatch, useAppSelector } from '../../redux/store/store'
+import { colors } from '../../styles/colors'
+import LottieView from 'lottie-react-native';
+import { scale } from '../../utils/metrics'
 
 
 type HomeNavigationProp = NativeStackNavigationProp<AppStackParamList, 'Home'>;
@@ -29,6 +33,18 @@ interface HomeScreenProps {
     // Define your component props here
 }
 
+const RECIPE_TABS = [
+    { name: 'BreakFast', selected: false },
+    { name: 'Brunch', selected: false },
+    { name: 'Lunch', selected: false },
+    { name: 'Dinner', selected: false },
+    { name: 'Drinks', selected: false },
+    { name: 'Snacks', selected: false },
+    { name: 'Pizza', selected: false },
+    { name: 'Chicken', selected: false },
+    // Add more options here
+];
+
 export default function Home({ navigation, route }: HomeScreenProps) {
     const insets = useSafeAreaInsets()
     const [query, setQuery] = useState('');
@@ -36,6 +52,8 @@ export default function Home({ navigation, route }: HomeScreenProps) {
     const [isListening, setIsListening] = useState(false);
     const [loading, setLoading] = useState(false)
     const recipeData = useAppSelector(state => state.recipes.recipes)
+
+    const [tabs, setTabs] = useState(RECIPE_TABS)
 
     const dispatch = useAppDispatch()
 
@@ -128,6 +146,17 @@ export default function Home({ navigation, route }: HomeScreenProps) {
     }, [])
 
 
+    const handleTabPress = (item: string, index: number) => {
+        const updatedTabs = tabs.map((tab, i) => ({
+            ...tab,
+            selected: i === index,
+        }));
+        setTabs(updatedTabs);
+        SearchRecipes(item)
+
+    };
+
+
     return (
         <SafeAreaView style={{ flex: 1, marginTop: insets.top }}>
             <ListingTopHeader
@@ -139,6 +168,27 @@ export default function Home({ navigation, route }: HomeScreenProps) {
                 startListening={startListening}
                 stopListening={stopListening}
             />
+            <View style={{}}>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 4, paddingVertical: 10 }}>
+                    {tabs.map((tab, index) => (
+                        <Pressable
+                            key={index}
+                            onPress={() => handleTabPress(tab.name, index)}
+                            style={{
+                                padding: 10,
+                                backgroundColor: tab.selected ? colors.primary : 'transparent',
+                                marginHorizontal: 4,
+                                borderRadius: 4,
+                                borderWidth: !tab.selected ? 1 : 0,
+                                borderColor: colors.grey1
+                            }}
+                        >
+                            <Text style={{ ...globalStyles.semiBoldLargeText, color: tab.selected ? '#fff' : '#000' }}>{tab.name}</Text>
+                        </Pressable>
+                    ))}
+                </ScrollView>
+            </View>
+            {/* <View style={{ flex: 1 }}> */}
             <RecipeListing
                 data={recipeData}
                 loading={loading}
@@ -147,6 +197,15 @@ export default function Home({ navigation, route }: HomeScreenProps) {
                 handleDislike={handleDislike}
                 isHome={true}
             />
+            {/* </View> */}
+            <Pressable style={{ position: 'absolute', right: 20, bottom: scale(10) }}>
+                <LottieView
+                    source={require('../../assets/animations/floatingButton.json')}
+                    autoPlay
+                    loop
+                    style={{ width: scale(70), height: scale(70) }}
+                />
+            </Pressable>
         </SafeAreaView>
     )
 }
